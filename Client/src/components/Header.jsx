@@ -5,26 +5,45 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <nav className={classes.NavBar}>
-        <div className={classes.NavBarOrientation}>
-            <Link to="/">
-                <div className={classes.Logo}>
-                    <span className={classes.firstLogo}>TerraNest</span>
-                    <span className={classes.secondLogo}>Realty</span>
-                </div>
+
+    <header className='bg-[#abd2ff2c] shadow-md '>
+        <div className='flex justify-between items-center max-w-6xl mx-auto p-7 '>
+            <Link to='/'>
+                <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
+                <span className='text-[#38628b]'>TerraNest</span>
+                <span className='text-[#003366]'>Realty</span>
+                </h1>
             </Link>
-            <form className={classes.SearchBar}>
-                <input type="text" placeholder="Search..."></input>
-                <FaSearch className={classes.SearchIcon}/>
+            <form
+                className='shadow-md p-3 rounded-lg flex items-center'
+            >
+                <input
+                type='text'
+                placeholder='Search...'
+                className='bg-transparent focus:outline-none w-24 sm:w-64'
+                />
+                <button>
+                    <FaSearch className='text-slate-600' />
+                </button>
             </form>
-            <ul className={classes.links}>
-                <Link to="/"><li className={classes.HomeButton}>Home</li></Link>
-                <Link to="/about"><li className={classes.AboutButton}>About</li></Link>
-                <Link to="/signin"><li className={classes.SigninButton}>Signin</li></Link>
+            <ul className='flex gap-4'>
+                <Link to='/'>
+                <li className='hidden sm:inline text-slate-700 hover:text-[#38628b] font-bold'>
+                    Home
+                </li>
+                </Link>
+                <Link to='/about'>
+                <li className='hidden sm:inline text-slate-700 hover:text-[#38628b] font-bold'>
+                    About
+                </li>
+                </Link>
+                <Link to='/signin'>
+                <li className='hidden sm:inline text-slate-700 hover:text-[#38628b] font-bold'>
+                    Sign In
+                </li>
+                </Link>
             </ul>
         </div>
-        
-
-    </nav>
+    </header>
   )
 }

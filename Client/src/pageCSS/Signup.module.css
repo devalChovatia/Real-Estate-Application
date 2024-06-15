@@ -1,0 +1,56 @@
+.orLine {
+    flex: 1;
+    height: 0.1rem;
+    background-color: #ccc;
+  }
+  
+  .orText {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+  .orContainer {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  
+  /* .googleButton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px; 
+  }
+  .googleLogo {
+    height: 25px;
+    margin-right: 10px;
+    align-self: center;
+  }
+  
+  .googleLogoText {
+    color: black;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  } */
+
+  .googleLogo {
+    height: 25px;
+    margin-right: 10px;
+    align-self: center;
+    display: flex;
+  }
+  .googleLogoText {
+    color: black;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }

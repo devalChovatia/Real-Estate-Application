@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from "../componentCSS/Header.module.css";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

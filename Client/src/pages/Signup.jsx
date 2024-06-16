@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import googleLogo from "../img/google.webp";
+import OAuth from '../components/OAuth.jsx';
 
 export default function Signup() {
 
@@ -67,11 +68,8 @@ export default function Signup() {
         <p className="mx-4 text-gray-500">or continue with</p>
         <div className="flex-grow border-t border-gray-300"></div>
       </div>
-        
-        <button className="bg-white text-black font-semibold h-10 border rounded-lg hover:opacity-90 disabled:opacity-50 flex items-center justify-start px-4">
-            <img src={googleLogo} alt="Google" className="h-6 mr-2" />
-            <span className="text-lg flex-grow">Google</span>
-        </button>
+        <OAuth/>
+
 
       </form>
       <div className="flex gap-2 mt-5">

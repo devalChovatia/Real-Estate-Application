@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import googleLogo from "../img/google.webp";
-import classes from "../pageCSS/Signup.module.css"
 
 export default function Signup() {
 

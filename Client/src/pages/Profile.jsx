@@ -110,21 +110,7 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message))
     } 
   }
-  // }
-  // const handleSignout = async(e) =>{
-  //   try {
-  //     dispatch(signoutUserStart())
-  //     const res = await fetch("/api/auth/signout")
-  //     const data = await res.json()
-  //     if (data.success===false){
-  //       dispatch(signoutUserFailure(data.message))
-  //       return
-  //     }
-  //     dispatch(signoutUserSuccess(data))
-  //   } catch (error) {
-  //     dispatch(signoutUserFailure(error))
-  //   }
-  // }
+
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -158,7 +144,7 @@ export default function Profile() {
           placeholder="username"
           value={formData.username}
           id="username"
-          className="border p3 rounded-lg"
+          className="border p-1 rounded-lg mt-2"
           onChange={handleChange}
         />
         <input
@@ -166,20 +152,22 @@ export default function Profile() {
           placeholder="email"
           value={formData.email}
           id="email"
-          className="border p3 rounded-lg"
+          className="border p-1 rounded-lg mt-2"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="password"
           id="password"
-          className="border p3 rounded-lg"
+          className="border p-1 rounded-lg mt-2"
           onChange={handleChange}
         />
-        <button disabled={loading} className="bg-slate-700 text-white rounded-lg disabled:opacity-80">
+        <button disabled={loading} className="bg-slate-700 mt-2 text-white rounded-lg disabled:opacity-80">
           {loading ? "Loading..." : "Update"}
         </button>
+        
       </form>
+      <button className="mt-2 border rounded-lg w-full">Create Listing</button>
       <div className="flex justify-between mt-5">
         <span onClick={handleDelete} className="text-red-700 cursor-pointer">Delete Account</span>
         <span onClick={handleSignout} className="text-red-700 cursor-pointer">Sign Out</span>

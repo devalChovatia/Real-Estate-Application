@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
 import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signoutUserStart, signoutUserSuccess, signoutUserFailure } from '../redux/user/userSlice.js';
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
   const { currentUser, loading } = useSelector((state) => state.user);
@@ -167,7 +168,9 @@ export default function Profile() {
         </button>
         
       </form>
-      <button className="mt-2 border rounded-lg w-full">Create Listing</button>
+      <Link to="/createListing">
+      <button className="mt-2 border rounded-lg w-full">Create Listing </button>
+      </Link>
       <div className="flex justify-between mt-5">
         <span onClick={handleDelete} className="text-red-700 cursor-pointer">Delete Account</span>
         <span onClick={handleSignout} className="text-red-700 cursor-pointer">Sign Out</span>

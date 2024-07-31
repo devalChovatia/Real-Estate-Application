@@ -27,7 +27,7 @@ const listingSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    batrooms: {
+    bathrooms: {
         type: Number,
         required: true,
     },
@@ -51,7 +51,7 @@ const listingSchema = new mongoose.Schema({
         type: Array,
         required: true,
     },
-    userRed: {
+    userRef: {
         type: String,
         required: true,
     },

@@ -19,7 +19,7 @@ export default function Profile() {
     avatar: currentUser.avatar,
   });
   const dispatch = useDispatch();
-  const [listingError, SetListingError] = useState(false)
+  const [listingError, setListingError] = useState(false)
   const [userListings, setUserListings] = useState([])
   
   useEffect(() => {
@@ -116,16 +116,32 @@ export default function Profile() {
 
   const handleShowListings = async () =>{
     try {
-      SetListingError(false)
+      setListingError(false)
       const res = await fetch(`/api/user/listings/${currentUser._id}`)
       const data = await res.json()
       if(data.success === false){
-        SetListingError(true)
+        setListingError(true)
         return
       }
       setUserListings(data)
     } catch (error) {
-      SetListingError(true)
+      setListingError(true)
+    }
+  }
+
+  const handleDeleteListing = async (listingId) =>{
+    try {
+      setListingError(false)
+      const res = await fetch(`/api/listing/delete/${listingId}`, {
+        method: "DELETE"
+      })
+      const data = await res.json()
+      if(data.success === false) {
+        console.log(data.message)
+        return
+      }
+      setUserListings(((prev) => prev.filter((listing) => listing._id !== listingId)))
+    } catch (error) {
       console.log(error)
     }
   }
@@ -210,7 +226,7 @@ export default function Profile() {
           </Link>
 
           <div className="flex flex-col ">
-            <button className="text-red-700">Delete</button>
+            <button onClick={() =>handleDeleteListing(listing._id)} className="text-red-700">Delete</button>
             <button className="text-green-700">Edit</button>
           </div>
 

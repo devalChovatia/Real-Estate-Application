@@ -34,6 +34,7 @@ export default function Listings() {
         
     }, [params.listingId])
 
+
   return (
     <div>
         {loading && <p className="text-center text-2xl mt-5">Loading...</p>}

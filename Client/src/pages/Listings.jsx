@@ -4,7 +4,9 @@ import { Swiper, SwiperSlide} from "swiper/react"
 import SwiperCore from "swiper"
 import {Navigation} from "swiper/modules"
 import 'swiper/css/bundle'
+import { useSelector } from 'react-redux'
 import { FaBath, FaBed, FaChair, FaMapMarkerAlt, FaParking, FaShare } from 'react-icons/fa'
+import ContactLandlord from '../components/ContactLandlord'
 
 export default function Listings() {
     const [listing, setListing] = useState(null)
@@ -12,7 +14,8 @@ export default function Listings() {
     const [error, setError] = useState(false)
     const params = useParams()
     const [copied, setCopied] = useState(false)
-
+    const {currentUser} = useSelector((state) => state.user)
+    const [contactLandlord, setContactLandlord] = useState(false)
     SwiperCore.use([Navigation])
 
     useEffect(() =>{
@@ -52,7 +55,7 @@ export default function Listings() {
 
                 )}
                 </Swiper>
-                <div className="fixed top-[16%] cursor-pointer right-[3%] bg-white border rounded-full w-8 h-8 flex justify-center items-center z-10">
+                <div className="fixed top-[16%] cursor-pointer right-[3%] opacity-60 bg-white border rounded-full w-8 h-8 flex justify-center items-center z-10">
                     <FaShare onClick={()=> {
                         navigator.clipboard.writeText(window.location.href)
                         setCopied(true)
@@ -106,7 +109,10 @@ export default function Listings() {
                             {listing.furnished === true ? "Furnished" : "Not Furnished"}
                         </li>
                     </ul>
-
+                    {currentUser && listing.userRef !== currentUser._id && !contactLandlord && (
+                        <button onClick={()=>{setContactLandlord(true)}} className="bg-slate-700 text-white rounded-lg uppcase hover:opacity-95 p-3">Contact Landlord</button>
+                    )}
+                    {contactLandlord && <ContactLandlord listing={listing} />}
                 </div>
             </>
         )}

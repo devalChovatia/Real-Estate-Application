@@ -83,7 +83,7 @@ export default function Listings() {
                         </p>
                         {
                             listing.offer === true &&(
-                                <p className="bg-green-700 w-full max-w-[200px] text-white text-center rounded-md p-1">${+listing.regularPrice - +listing.discountedPrice}</p>
+                                <p className="bg-green-700 w-full max-w-[200px] text-white text-center rounded-md p-1">${+listing.regularPrice - +listing.discountedPrice} OFF</p>
                             )
                         }
                     </div>

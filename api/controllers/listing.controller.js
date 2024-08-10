@@ -67,23 +67,25 @@ export const getListings = async (req, res, next) => {
         const startingIndex = parseInt(req.query.startingIndex) || 0
         
         let offer = req.query.offer
-        if(offer === undefined || offer === "false"){
-            offer = { $in: [false, true]}
+        if (offer === undefined || offer === "false") {
+            offer = { $in: [false, true] }
         }
 
         let furnished = req.query.furnished
-        if(furnished === undefined || furnished === "false"){
-            furnished = { $in: [false, true]}
+        if (furnished === undefined || furnished === "false") {
+            furnished = { $in: [false, true] }
         }
 
         let parking = req.query.parking
-        if(parking === undefined || parking === "false"){
-            parking = { $in: [false, true]}
+        if (parking === undefined || parking === "false") {
+            parking = { $in: [false, true] }
         }
 
         let type = req.query.type
-        if(type === undefined || parking === "all"){
-            type = { $in: ["sale", "rent"]}
+        if (type === undefined || type === "all") {
+            type = { $in: ["sale", "rent"] }
+        } else if (type !== "sale" && type !== "rent") {
+            type = { $in: [] } // Ensures no results if type is invalid
         }
 
         const searchTerm = req.query.searchTerm || ""
@@ -97,9 +99,9 @@ export const getListings = async (req, res, next) => {
             parking,
             type
         }).sort({
-            [sort]:order
+            [sort]: order
         }).limit(limit).skip(startingIndex)
-        
+
         return res.status(200).json(listings)
 
     } catch (error) {

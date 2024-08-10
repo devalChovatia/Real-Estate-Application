@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute"
 import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listings from './pages/Listings';
+import Search from './pages/Search';
 
 export default function  () {
   return <BrowserRouter>
@@ -25,6 +26,7 @@ export default function  () {
     <Route path='/updateListing/:listingId' element={<UpdateListing />} />
     </Route>
     <Route path='/listing/:listingId' element={<Listings />}/>
+    <Route path='/search' element={<Search />} />
   </Routes>
   </BrowserRouter>
 }

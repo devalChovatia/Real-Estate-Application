@@ -1,6 +1,5 @@
-# Real Estate MERN Stack Application 
-[(View Site)](https://terranestrealty.onrender.com/) 
-**Note --> Application may take a minute to wake back up due to inactivity 
+# Real Estate MERN Stack Application [(View Site)](https://terranestrealty.onrender.com/) 
+
 ## Overview
 
 This project is a full-featured real estate web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. The application allows users to browse, search, and manage real estate listings.

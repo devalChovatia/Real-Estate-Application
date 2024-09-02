@@ -1,6 +1,6 @@
 # Real Estate MERN Stack Application [(View Site)](https://terranestrealty.onrender.com/) 
 
-May take a minute to ge the site loaded due to inactivity period**
+May take a minute to get the site loaded due to inactivity period**
 
 ## Overview
 

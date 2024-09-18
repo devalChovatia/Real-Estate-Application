@@ -6,7 +6,7 @@ May take a minute to get the site loaded due to inactivity period**
 
 This project is a full-featured real estate web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. The application allows users to browse, search, and manage real estate listings.
 
-![image](https://github.com/user-attachments/assets/23f819a1-07fe-438b-861b-ce6b93d3f4c1)
+![image](https://github.com/user-attachments/assets/ec808845-c5b6-43b8-b61a-5905b09bd72a)
 
 ![image](https://github.com/user-attachments/assets/830c69ab-c5ae-468b-8deb-602776f9ae0b)
 
